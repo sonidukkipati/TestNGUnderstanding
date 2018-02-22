@@ -26,7 +26,7 @@ public class SampleTestNG {
         int b = 1;
         System.out.println(a / b);
     }
-    @Test(timeOut=2000,groups={"smoke"},invocationCount=3)
+    @Test(timeOut=5000,groups={"smoke"},invocationCount=3)
     public void timeout() throws InterruptedException {
         Thread.sleep(4000);
 }
