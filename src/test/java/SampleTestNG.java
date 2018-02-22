@@ -29,7 +29,7 @@ public class SampleTestNG {
         //dr.get("http://fits.qauber.com/#/page/login");
     }
 
-    @Test(enabled = true,groups={"Stress"})
+    @Test(enabled = true,groups={"smoke"})
     public void reportaddtest() throws InterruptedException {
         dr.get("http://fits.qauber.com/#/page/login");
         Thread.sleep(6000);
