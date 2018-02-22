@@ -14,7 +14,7 @@ import java.util.List;
 
 public class SampleTestNG {
 
-    WebDriver dr;
+    //WebDriver dr;
     PageResources pageResources;
     Faker faker = new Faker();
     Boolean checkvalidity = true;
@@ -22,15 +22,19 @@ public class SampleTestNG {
     public void test1() throws InterruptedException {
 
         System.out.println("This is Before Test");
-        dr = new ChromeDriver();
-        Thread.sleep(3000);
+        WebDriver dr;
+        //dr = new ChromeDriver();
+        //Thread.sleep(3000);
         //dr.manage().window().maximize();
-        pageResources = new PageResources(dr);
+        //pageResources = new PageResources(dr);
         //dr.get("http://fits.qauber.com/#/page/login");
     }
 
     @Test(enabled = true,groups={"smoke"})
     public void reportaddtest() throws InterruptedException {
+        WebDriver dr;
+        dr=new ChromeDriver();
+        pageResources = new PageResources(dr);
         dr.get("http://fits.qauber.com/#/page/login");
         Thread.sleep(6000);
         pageResources.getLoginPage().userNameField().sendKeys(pageResources.getLoginPage().getUsername());
@@ -181,7 +185,7 @@ public class SampleTestNG {
         int b = 1;
         System.out.println(a / b);
     }
-    @Test(timeOut=5000,groups={"smoke"},invocationCount=3)
+    @Test(timeOut=5000,groups={"Stress"},invocationCount=3)
     public void timeout() throws InterruptedException {
         Thread.sleep(4000);
 }
